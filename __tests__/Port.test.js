@@ -23,8 +23,8 @@ describe("addShip", () => {
 
   beforeEach(() => {
     port = new Port("Dover");
-    titanic = {};
-    queenMary = {};
+    titanic = jest.fn();
+    queenMary = jest.fn();
   });
 
   it("can add a ship", () => {
@@ -44,8 +44,8 @@ describe("removeShip", () => {
 
   beforeEach(() => {
     port = new Port("Dover");
-    titanic = {};
-    queenMary = {};
+    titanic = jest.fn();
+    queenMary = jest.fn();
 
     port.addShip(titanic);
     port.addShip(queenMary);
