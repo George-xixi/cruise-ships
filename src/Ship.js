@@ -11,14 +11,12 @@ class Ship {
   setSail() {
     const itinerary = this.itinerary;
     const currentPortInItineraryIndex = itinerary.ports.indexOf(this.currentPort);
-    const shipInPortIndex = this.currentPort.ships.indexOf(this);
 
-  
     if (currentPortInItineraryIndex === (itinerary.ports.length - 1)) {
       throw new Error('End of itinerary reached');
     }
     
-    this.currentPort.ships.splice(shipInPortIndex, 1);
+    this.currentPort.removeShip(this);
     this.previousPort = this.currentPort;
     this.currentPort = null;
   };
